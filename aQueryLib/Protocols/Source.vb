@@ -5,18 +5,19 @@ Imports System
 Namespace aQueryLib
     Friend Class Source
         Inherits Protocol
+
         ' FF FF FF FF 57
-        Private Const _QUERY_GETCHALLANGE As String = "ÿÿÿÿW"
+        Private Const _QUERY_GETCHALLANGE As String = "W"
 
         ' FF FF FF FF 54 53 6F 75 72 63 65 20 45 6E 67 69
         ' 6E 65 20 51 75 65 72 79 00       
-        Private Const _QUERY_DETAILS As String = "ÿÿÿÿTSource Engine Query" & Chr(0) ' Changed this from just ÿÿÿÿT.
+        Private Const _QUERY_DETAILS As String = "TSource Engine Query" & Chr(0) ' Changed this from just ÿÿÿÿT.
 
         ' FF FF FF FF 56
-        Private Const _QUERY_RULES As String = "ÿÿÿÿV"
+        Private Const _QUERY_RULES As String = "V"
 
         ' FF FF FF FF 55
-        Private Const _QUERY_PLAYERS As String = "ÿÿÿÿU"
+        Private Const _QUERY_PLAYERS As String = "U"
 
         ' This value is used to determine if a reply is an "S2C_CHALLENGE", ie if it contains
         ' a new challenge number for us to use.

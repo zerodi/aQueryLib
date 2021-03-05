@@ -56,9 +56,9 @@ Namespace aQueryLib
             Dim read As Integer = 0, bufferOffset As Integer = 0
 
             ' Request
-            _sendBuffer = System.Text.Encoding.UTF8.GetBytes(request)
-
-            _serverConnection.SendTo(_sendBuffer, _remoteIpEndPoint)
+            Dim _startBytes As Byte() = New Byte() {&HFF, &HFF, &HFF, &HFF}
+            Dim _reqBytes As Byte() = System.Text.Encoding.UTF8.GetBytes(request)
+            _serverConnection.SendTo(_startBytes.Concat(_reqBytes).ToArray(), _remoteIpEndPoint)
 
             ' Response
             Do
