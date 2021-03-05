@@ -56,7 +56,7 @@ Namespace aQueryLib
             Dim read As Integer = 0, bufferOffset As Integer = 0
 
             ' Request
-            _sendBuffer = System.Text.Encoding.[Default].GetBytes(request)
+            _sendBuffer = System.Text.Encoding.UTF8.GetBytes(request)
 
             _serverConnection.SendTo(_sendBuffer, _remoteIpEndPoint)
 
@@ -189,7 +189,7 @@ Namespace aQueryLib
                 _readBuffer = temp
                 temp = Nothing
             End If
-            _responseString = System.Text.Encoding.[Default].GetString(_readBuffer)
+            _responseString = System.Text.Encoding.UTF8.GetString(_readBuffer)
 
             If _debugMode Then
                 Dim stream As System.IO.FileStream = System.IO.File.OpenWrite("LastQuery.dat")

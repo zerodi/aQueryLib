@@ -76,7 +76,7 @@ Namespace aQueryLib
             '
             ' Instead, we should just keep the challenge number,
             ' which is a 4 byte integer.
-            _CHALLANGE = System.Text.Encoding.[Default].GetString(Response, 5, 4)
+            _CHALLANGE = System.Text.Encoding.UTF8.GetString(Response, 5, 4)
         End Sub
 
         Private Sub ParseDetails()
